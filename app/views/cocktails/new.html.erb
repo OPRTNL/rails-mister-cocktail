@@ -1,0 +1,11 @@
+<h1> Create a new cocktail</h1>
+salut
+<p>
+  <%= simple_form_for @cocktail do |f| %>
+coucou
+    <%= f.input :name %>
+    <%= f.association :ingredient %>
+    <%= f.submit "add as lzdn" %>
+
+  <% end %>
+</p>
