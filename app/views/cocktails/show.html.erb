@@ -9,7 +9,19 @@
 Add Ingredients
 </h2>
 
+
+
 <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+<%= raw(p @cocktail.errors) %>
+  <% if @dose.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @dose.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
     <%= f.input :description %>
     <%= f.association :ingredient %>
     <%= f.submit "add as Ingredient" %>
